@@ -13,8 +13,7 @@ public class ReadWriteList<E> {
         lock.writeLock().lock();
         try {
             list.add(element);
-        }
-        finally {
+        } finally {
             lock.writeLock().unlock();
         }
     }
@@ -23,8 +22,7 @@ public class ReadWriteList<E> {
         lock.readLock().lock();
         try {
             return list.get(index);
-        }
-        finally {
+        } finally {
             lock.readLock().unlock();
         }
     }
